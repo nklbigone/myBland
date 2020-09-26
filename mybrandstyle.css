@@ -1,0 +1,300 @@
+body{
+  width: 100%;
+  margin: 0;
+  padding:0;
+}
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  background-color: white;
+}
+.navbar ul{
+  display: flex;
+}
+.navbar ul li{
+  list-style-type: none;
+  
+}
+.left-nav{
+  width: 40%;
+  display: flex;
+  padding: 6px;
+}
+
+.search{
+  width: 100%;
+  height: 80%;
+  background-color: #edf0f5;
+  border-radius: 5px;
+  border: none;
+}
+.search:focus{
+  outline: none;
+  background-color: #e8fae9;
+}
+.login-button{
+  background-color: green;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 70%;
+  padding-top:4px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 3px;
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 18px;
+  text-align: center;
+}
+.navbar ul li a{
+  text-decoration: none;
+  color: black;
+  margin-right:2px;
+  margin-left: 2px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.navbar ul li a:hover{
+  background-color: green;
+  color: white;
+}
+
+
+/*homepage styles*/
+  
+  h1 {
+    color: navy;
+    margin-left: 20px;
+  }
+ .background img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+ }
+  .content{
+    background-color: whitesmoke;
+    min-height: 100vh;
+    overflow: auto;
+  }
+
+  #card_container{
+    width: 75%;
+    margin: 25px auto;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #card_container .card{
+    width:300px;
+    height: 350px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px;
+    position: relative;
+  }
+  #card_container .card-flex{
+    width: 615px;
+    height: 350px;
+    display: flex;
+    background-color: white;
+    margin: 10px;
+  }
+  .card-flex .flex-1{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .card-flex .flex-1 .cover-photo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card-flex .flex-1 .card-text{
+    width: 90%;
+    height: 100%;
+    padding: 20px;
+    padding-right: 20px;
+    position: relative;
+  }
+
+  .card .card-footer{
+    height: 10%;
+    background-color: #dee1e3;
+    position: absolute;
+    bottom: 0px;
+    width: 100%
+  }
+  .card-footer ul{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+  }
+  .card-footer ul li{
+    list-style-type: none;
+    width: 100%;
+    text-align: center;
+    height: 100%; 
+  }
+  .card-flex .flex-1 .card-text .user{
+    display: flex;
+    margin-top: 20px;
+  }
+  .card-flex .flex-1 .card-text .user .profile{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    clip-path: circle();
+  }
+  .card-flex .flex-1 .card-text .user .user-name h5{
+    margin-bottom: -5px;
+    margin-top: 2px;
+    margin-left: 8px;
+  }
+  .card-flex .flex-1 .card-text .user .user-name small{
+    color: #abacb0;
+    margin-left: 8px;
+  }
+.card .cover-photo{
+  width: 100%;
+  height:40%;
+  object-fit: cover;
+}
+.card .profile{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  clip-path: circle();
+  margin-top: -30px;
+  margin-right: 120px;
+  margin-left: 120px;
+
+}
+.card .card-text{
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+.card .card-text b{
+  text-align: center;
+}
+/*login page styles*/
+.body_content{
+  background-color: rgb(229, 238, 229);
+  margin: 0px;
+  height: 100vh;
+  position: relative;
+  
+}
+.login{
+  background-color: white;
+  width: 30%;
+  height: 50vh;
+  margin: 0 auto;
+  position: absolute;
+  top: 120px;
+  left: 40px;
+  right: 40px;
+  padding: 40px;
+  border-radius: 10px;
+}
+.login .add-text{
+  width: 100%;
+  height: 60px;
+  border: none;
+  margin-bottom: 30px;
+  background-color: #f0f2f5;
+}
+.submit{
+  width: 100%;
+  height: 60px;
+  font-size: 16px;
+  border: none;
+  margin-bottom: 30px;
+  background-color: green;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+.login form .add-text:focus{
+  outline: none;
+  background-color: #e8fae9;
+}
+.submit:focus{
+  outline: none;
+  background-color: #37733a;
+}
+.login form{
+  text-align: center;
+}
+.login form a{
+  text-decoration: none;
+  color: green;
+}
+
+/*blog page styles*/
+.blog-header{
+  width: 92%;
+  height: 75vh;
+  margin: 20px auto;
+  border-radius: 15px;
+}
+.blog-header img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.blog-text{
+  text-align: center;
+  justify-content: center;
+  width: 97%;
+  margin: 20px auto;
+}
+.btn-edit{
+  color: white;
+  background-color: green;
+  padding-left: 20px; 
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  border-radius: 15px;
+}
+.btn-delete{
+  color: white;
+  background-color: red;
+  padding-left: 20px; 
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  border-radius: 15px;
+}
+
+.flex{
+  display: flex;
+}
+.form-side{
+  padding-right: 20px;
+  padding-top: 20px;
+}
+
+.form-side form textarea{
+  border: none;
+  background-color: #ebedec;
+  border-radius: 10px;
+  padding: 10px;
+}
+.form-side form label{
+  color: #7f8281;
+}
+.form-side form textarea:focus{
+  outline: none;
+  background-color: #e1ede7;
+}
