@@ -1,5 +1,5 @@
 import express from 'express';
-// import controller from '../controller/usersController'
+import controller from '../controller/usersController'
 import jwt from 'jsonwebtoken'
 import Auth from '../middlewares/auths'
 const  router = express.Router()

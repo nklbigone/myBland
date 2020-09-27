@@ -15,8 +15,8 @@ dotenv.config()
 
 const app = express()
   require('./scr/config/passport').default(passport)
-
-mongoose.connect(process.env.URL, { useNewUrlParser: true })
+const {  NODE_ENV, URL, MONGO_URI_TEST} = process.env
+mongoose.connect(NODE_ENV === 'test'? MONGO_URI_TEST:URL, { useNewUrlParser: true })
 	const con = mongoose.connection
 	
 	con.on('open', () => {

@@ -40,7 +40,7 @@ describe(" blog API", () => {
         .set("Content-Type", "application/x-www-form-urlencoded")
         .field("title", blog.title)
         .field("blogDescription", blog.blogPicture)
-        .attach("blogPicture", "/home/alexis/Pictures/alexis1.png")
+        .attach("blogPicture", "/Users/andela/Desktop/pic3.png")
         .end((err, response) => {
           ids = response.body._id;
           expect(response).to.have.status(200);

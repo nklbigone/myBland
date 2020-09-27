@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">70% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/30</span>
+                <span class='fraction'>21/30</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/10</span>
+                <span class='fraction'>5/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/10</span>
+                <span class='fraction'>6/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.72% </span>
+                <span class="strong">72.41% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/29</span>
+                <span class='fraction'>21/29</span>
             </div>
         
             
@@ -143,19 +143,19 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -208,21 +208,21 @@ secretOrKey: process.env.JWT_SECRET
 }
 export default function(passport){
     passport.use(
-        new localStrategy( { usernameField: 'email'}, <span class="fstat-no" title="function not covered" >(e</span>mail, password, done) =&gt; {
+        new localStrategy( { usernameField: 'email'}, (email, password, done) =&gt; {
             // Match User
-<span class="cstat-no" title="statement not covered" >            User.</span>findOne({ email: email})
-            .then(<span class="fstat-no" title="function not covered" >user </span>=&gt; {
-<span class="cstat-no" title="statement not covered" >                if(!user){</span>
+            User.findOne({ email: email})
+            .then(user =&gt; {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if(!user){
 <span class="cstat-no" title="statement not covered" >                    return d</span>one(null, false, {message: ' that email is not registered.'})
                 }
 &nbsp;
                 // Match Password
 &nbsp;
-<span class="cstat-no" title="statement not covered" >                compare(p</span>assword, user.password, <span class="fstat-no" title="function not covered" >(e</span>rr, isMatch) =&gt; {
-<span class="cstat-no" title="statement not covered" >                    if(err) <span class="cstat-no" title="statement not covered" >throw e</span></span>rr;
+                compare(password, user.password, (err, isMatch) =&gt; {
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if(err) <span class="cstat-no" title="statement not covered" >throw e</span>rr;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >                    if(isMatch){</span>
-<span class="cstat-no" title="statement not covered" >                        return d</span>one(null, user);
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if(isMatch){
+                        return done(null, user);
                     }else{
 <span class="cstat-no" title="statement not covered" >                        return(d</span>one(null, false, {message: 'Password Incorrect'}))
                     }
@@ -265,7 +265,7 @@ export default function(passport){
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Sep 25 2020 08:29:18 GMT+0200 (Central Africa Time)
+                at Sun Sep 27 2020 12:56:21 GMT+0200 (Central Africa Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
