@@ -7,7 +7,7 @@ const  router = express.Router()
 
 // Register handle
 
-// router.post('/register', controller.register)
+router.post('/register', controller.register)
 
     // Login handle
 

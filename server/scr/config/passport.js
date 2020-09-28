@@ -19,9 +19,9 @@ export default function(passport){
             // Match User
             User.findOne({ email: email})
             .then(user => {
-                if(!user){
-                    return done(null, false, {message: ' that email is not registered.'})
-                }
+                // if(!user){
+                //     return done(null, false, {message: ' that email is not registered.'})
+                // }
 
                 // Match Password
 
@@ -30,9 +30,10 @@ export default function(passport){
 
                     if(isMatch){
                         return done(null, user);
-                    }else{
-                        return(done(null, false, {message: 'Password Incorrect'}))
                     }
+                    // else{
+                    //     return(done(null, false, {message: 'Password Incorrect'}))
+                    // }
 
                 })
             })

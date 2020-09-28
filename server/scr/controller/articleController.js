@@ -9,7 +9,7 @@ import articleValidation from "../validation/artical.validation";
             res.json(articles)
 
         }catch(err){
-        res.send('error' +err)
+        res.send('error' +err, 404)
         }
     }
   static  async articlePostName(req, res){

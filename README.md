@@ -1,2 +1,5 @@
 My Brand Blog + Web
-# [![GitHub issues](https://img.shields.io/github/issues/nklbigone/MyBrandAlex)](https://github.com/nklbigone/MyBrandAlex/issues)
+
+[![Build Status](https://travis-ci.org/nklbigone/myBland.svg?branch=master)](https://travis-ci.org/nklbigone/myBland)
+
+[![Coverage Status](https://coveralls.io/repos/github/nklbigone/myBland/badge.svg?branch=master)](https://coveralls.io/github/nklbigone/myBland?branch=master)
