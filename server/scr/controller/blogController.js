@@ -10,9 +10,6 @@ class blogsController {
         message: error.details[0].message,
       });
     }
-
-    // try{
-
     const path = req.file.path;
     const uniqueFilename = new Date().toISOString();
     cloudinary.uploader.upload(
@@ -32,9 +29,6 @@ class blogsController {
         res.json(blog1);
       }
     );
-    // }catch{
-    //     res.send('Error')
-    // }
   }
 
   static async blogGetName(req, res) {
