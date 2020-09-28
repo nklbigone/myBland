@@ -34,23 +34,23 @@ describe(" blog API", () => {
   })
 
   describe(" POST /user/", () => {
-    // it("It should POST  one user", (done) => {
-    //   const blog = {
-    //     name: "alexisikitta",
-    //     email: "alexikit4@gmail.com",
-    //     password: "123456",
-    //   };
-    //   chai
-    //     .request(server)
-    //     .post("/users/register/")
-    //     .send(blog)
-    //     .set("authorization", `Bearer ${token}`)
-    //     .end((err, response) => {
-    //       expect(response).to.have.status(201);
-    //       expect(response.body).to.be.a("object");
-    //       done();
-    //     });
-    // });
+    it("It should POST  one user", (done) => {
+      const blog = {
+        name: "alexisikitta",
+        email: "alexikit4@gmail.com",
+        password: "123456",
+      };
+      chai
+        .request(server)
+        .post("/users/register/")
+        .send(blog)
+        .set("authorization", `Bearer ${token}`)
+        .end((err, response) => {
+          expect(response).to.have.status(201);
+          expect(response.body).to.be.a("object");
+          done();
+        });
+    });
 
     it("It should not POST any user", (done) => {
       chai

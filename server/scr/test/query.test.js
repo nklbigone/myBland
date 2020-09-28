@@ -21,7 +21,7 @@ describe(" Query API", () => {
       chai
         .request(server)
         .get("/queries/")
-        .set("authorization", `Bearer ${jwt.sign( {name: "welcome", id: "fast", mail: "now"},process.env.JWT_SECRET)}`)
+        .set("authorization")
         .end((err, response) => {
           console.log(response.body)
           response.should.have.status(200);
