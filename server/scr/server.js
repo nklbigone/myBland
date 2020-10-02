@@ -43,7 +43,7 @@ app.use("/articles", articleRoute);
 app.use('/api/', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 // app.use('/', require('./routes/index'))
 app.use("/users", require("./routes/users"));
-app.listen(process.env.PORT,3001, () => {
+app.listen(process.env.PORT || 3001, () => {
   console.log("Server started");
 });
 

@@ -380,7 +380,7 @@
               "200": {
                 "description": "ok",
                 "schema": {
-                  "$ref": "#/definitions/queres"
+                  "$ref": "#/definitions/queries"
                 }
               },
               "404": {
@@ -505,7 +505,7 @@
       }
     }
 },
-   "queres": {
+   "queries": {
     "type": "object",
     "properties": {
       "name": {
