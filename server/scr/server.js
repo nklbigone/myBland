@@ -16,8 +16,8 @@ dotenv.config();
 //loading passpot
 
 const app = express();
-require("./config/passport").default(passport);
-const { NODE_ENV, URL, MONGO_URI_TEST } = process.env;
+require("./config/passport").default(passport); 
+const { NODE_ENV, URL, MONGO_URI_TEST } = process.env.PORT;
 mongoose.connect(NODE_ENV === "test" ? MONGO_URI_TEST : URL, {
   useNewUrlParser: true,
 });
