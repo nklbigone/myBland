@@ -1,8 +1,9 @@
 import chai from "chai";
 import chaihttp from "chai-http";
-import server from "../../server";
+import server from "../server";
 import { describe, it, beforeEach } from "mocha";
 import jwt from "jsonwebtoken";
+import path from 'path'
 import blog from '../models/Blog'
 let ids;
 
@@ -40,7 +41,7 @@ describe(" blog API", () => {
         .set("Content-Type", "application/x-www-form-urlencoded")
         .field("title", blog.title)
         .field("blogDescription", blog.blogPicture)
-        .attach("blogPicture", "/Users/andela/Desktop/pic3.png")
+        .attach("blogPicture", path.join(__dirname,'asset/pic2.png'))
         .end((err, response) => {
           ids = response.body._id;
           expect(response).to.have.status(200);

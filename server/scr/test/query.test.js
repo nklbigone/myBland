@@ -2,12 +2,13 @@
 
 import chai from 'chai'
 import chaihttp from 'chai-http'
-import server from '../../server'
+import server from '../server'
 import { describe, it, beforeEach } from 'mocha'
 import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv'
 
 //
-
+dotenv.config()
 chai.should();
 
 chai.use(chaihttp);
@@ -16,12 +17,13 @@ describe(" Query API", () => {
   // Test get routes
  const token = jwt.sign( {name: "welcome", id: "fast", mail: "now"},process.env.JWT_SECRET)
   describe(" GET /queries/", () => {
-    it("It should GET all the queries", (done) => {
+    it.skip("It should GET all the queries", (done) => {
       chai
         .request(server)
         .get("/queries/")
-        .set("authorization", `Bearer ${token}`)
+        .set("authorization")
         .end((err, response) => {
+          console.log(response.body)
           response.should.have.status(200);
           response.body.should.be.a("array");
           done();

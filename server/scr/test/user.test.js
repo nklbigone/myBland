@@ -1,7 +1,7 @@
 import chai from "chai";
 import chaihttp from "chai-http";
-import server from "../../server";
-import { describe, it, beforeEach } from "mocha";
+import server from "../server";
+import { describe, it, beforeEach ,afterEach} from "mocha";
 import jwt from "jsonwebtoken";
 import User from '../models/User'
 
@@ -29,26 +29,28 @@ chai.use(chaihttp);
 
 describe(" blog API", () => {
   // Test get routes
-
+   after(async()=> {
+    await User.deleteMany({});
+  })
 
   describe(" POST /user/", () => {
-    // it("It should POST  one user", (done) => {
-    //   const blog = {
-    //     name: "alexisikitta",
-    //     email: "alexikit4@gmail.com",
-    //     password: "123456",
-    //   };
-    //   chai
-    //     .request(server)
-    //     .post("/users/register/")
-    //     .send(blog)
-    //     .set("authorization", `Bearer ${token}`)
-    //     .end((err, response) => {
-    //       expect(response).to.have.status(201);
-    //       expect(response.body).to.be.a("object");
-    //       done();
-    //     });
-    // });
+    it("It should POST  one user", (done) => {
+      const blog = {
+        name: "alexisikitta",
+        email: "alexikit4@gmail.com",
+        password: "123456",
+      };
+      chai
+        .request(server)
+        .post("/users/register/")
+        .send(blog)
+        .set("authorization", `Bearer ${token}`)
+        .end((err, response) => {
+          expect(response).to.have.status(201);
+          expect(response.body).to.be.a("object");
+          done();
+        });
+    });
 
     it("It should not POST any user", (done) => {
       chai
@@ -62,22 +64,26 @@ describe(" blog API", () => {
   });
 
     describe(" POST /user/", () => {
-      it("It should login  user", (done) => {
+       let userCreation = {
+        name: "alexis",
+        email: "alexis@gmail.com",
+        password: "$2a$10$FdE/ppeGOAYpjvmNpqAaCezAPuN3.EniHa4edT43Q4wHkClXrUNui",
+ };
+      it("It should login  user", async () => {
+        const user = await User.create(userCreation)
+        await user.save()
         const blog = {
           email: "alexis@gmail.com",
           password: "123456",
         };
-        chai
+         const response  = await chai
           .request(server)
           .post("/users/login/")
           .send(blog)
-          .set("authorization", `Bearer ${token}`)
-          .end((err, response) => {
             expect(response).to.have.status(200);
             expect(response.body).to.be.a("object");
-            done();
           });
-      });
+      
 
       it("It should not login any user", (done) => {
         chai

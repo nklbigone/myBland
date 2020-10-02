@@ -5,14 +5,11 @@ class blogsController {
   static async blogPostName(req, res) {
     const { error } = blogValidation(req.body);
     if (error) {
-      res.json({
-        success: 0,
-        message: error.details[0].message,
-      });
+      // res.json({
+      //   success: 0,
+      //   message: error.details[0].message,
+      // });
     }
-
-    // try{
-
     const path = req.file.path;
     const uniqueFilename = new Date().toISOString();
     cloudinary.uploader.upload(
@@ -32,31 +29,23 @@ class blogsController {
         res.json(blog1);
       }
     );
-    // }catch{
-    //     res.send('Error')
-    // }
   }
 
   static async blogGetName(req, res) {
-    try {
       const blogs = await blog.find();
       res.json(blogs);
-    } catch (err) {
-      res.send("error" + err);
-    }
   }
 
   static async blogGetOneName(req, res) {
-    try {
+    // try {
       const blogs = await blog.findById(req.params.id);
       res.json(blogs);
-    } catch (err) {
-      res.send("error" + err);
-    }
+    // } catch (err) {
+    //   res.send("error" + err);
+    // }
   }
 
   static async updateBlog(req, res) {
-    try {
       const blogs = await blog.findById(req.params.id);
       if (!blogs) return res, 404, "doesn't find one blog";
 
@@ -67,9 +56,6 @@ class blogsController {
       blogs.blogPicture = req.body.blogPicture;
       const blogup = await blogs.save();
       res.json(blogup);
-    } catch (e) {
-      return res, 404, " fails";
-    }
   }
 
   static async deleteBlog(req, res) {
