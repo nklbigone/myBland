@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">93.94% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>33/33</span>
+                <span class='fraction'>31/33</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">93.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>30/30</span>
+                <span class='fraction'>28/30</span>
             </div>
         
             
@@ -104,7 +104,8 @@
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -123,22 +124,22 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -148,64 +149,66 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import '@babel/polyfill'
-import express from "express"
-import mongoose from "mongoose"
-import contactRoute from './scr/routes/contacts'
-import blogRoute from './scr/routes/blogs'
-import articleRoute from './scr/routes/articles'
-import queryRoute from './scr/routes/query'
-import {upload} from './scr/utils/imageUpload'
-import passport from'passport'
-import dotenv from 'dotenv'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import "@babel/polyfill";
+import express from "express";
+import mongoose from "mongoose";
+import contactRoute from "./scr/routes/contacts";
+import blogRoute from "./scr/routes/blogs";
+import articleRoute from "./scr/routes/articles";
+import queryRoute from "./scr/routes/query";
+import { upload } from "./scr/utils/imageUpload";
+import passport from "passport";
+import dotenv from "dotenv";
 &nbsp;
-dotenv.config()
+dotenv.config();
 &nbsp;
 //loading passpot
 &nbsp;
-const app = express()
-  require('./scr/config/passport').default(passport)
-const {  NODE_ENV, URL, MONGO_URI_TEST} = process.env
-mongoose.connect(NODE_ENV === 'test'? <span class="branch-0 cbranch-no" title="branch not covered" >MONGO_URI_TEST:U</span>RL, { useNewUrlParser: true })
-	const con = mongoose.connection
-	
-	con.on('open', () =&gt; {
+const app = express();
+require("./scr/config/passport").default(passport);
+const { NODE_ENV, URL, MONGO_URI_TEST } = process.env;
+mongoose.connect(NODE_ENV === "test" ? <span class="branch-0 cbranch-no" title="branch not covered" >MONGO_URI_TEST : U</span>RL, {
+  useNewUrlParser: true,
+});
+const con = mongoose.connection;
 &nbsp;
-		console.log('Connected...')
-	})
+con.on("open", <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  console.</span>log("Connected...");
+});
 &nbsp;
-	//bodyparser
+//bodyparser
 &nbsp;
-app.use(express.urlencoded({extended: false }));
+app.use(express.urlencoded({ extended: false }));
 &nbsp;
-  // passport middleware
-  app.use(passport.initialize());
+// passport middleware
+app.use(passport.initialize());
 &nbsp;
+app.use(express.json());
+app.use(upload.single("blogPicture"));
+app.use("/queries", queryRoute);
+app.use("/contacts", contactRoute);
+app.use("/blogs", blogRoute);
+app.use("/articles", articleRoute);
 &nbsp;
-	app.use(express.json())
-	app.use(upload.single("blogPicture"))
-	app.use('/queries', queryRoute)
-	app.use('/contacts', contactRoute)
-	app.use('/blogs', blogRoute)
-	app.use('/articles', articleRoute)
+// app.use('/', require('./routes/index'))
+app.use("/users", require("./scr/routes/users"));
+app.listen(3001, <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  console.</span>log("Server started");
+});
 &nbsp;
-	// app.use('/', require('./routes/index'))
-	app.use('/users', require('./scr/routes/users'))
-	app.listen(6000, () =&gt; {
-		console.log('Server started')
-	})
-&nbsp;
-export default app</pre></td></tr></table></pre>
+export default app;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Sep 28 2020 09:50:07 GMT+0200 (Central Africa Time)
+                at Fri Oct 02 2020 01:09:45 GMT+0200 (Central Africa Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

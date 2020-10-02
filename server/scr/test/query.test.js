@@ -2,7 +2,7 @@
 
 import chai from 'chai'
 import chaihttp from 'chai-http'
-import server from '../../server'
+import server from '../server'
 import { describe, it, beforeEach } from 'mocha'
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'

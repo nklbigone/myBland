@@ -1,6 +1,6 @@
 import chai from "chai";
 import chaihttp from "chai-http";
-import server from "../../server";
+import server from "../server";
 import { describe, it, beforeEach ,afterEach} from "mocha";
 import jwt from "jsonwebtoken";
 import User from '../models/User'

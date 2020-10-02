@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/20</span>
+                <span class='fraction'>4/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.75% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/16</span>
+                <span class='fraction'>4/16</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -117,38 +117,38 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -168,38 +168,38 @@ class userController {
 &nbsp;
 // Register handle
 &nbsp;
-static register(req, res){
-    const { name, email, password} = req.body;
+static register(<span class="fstat-no" title="function not covered" >req, r</span>es)<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >{</span></span></span>
+    const { name, email, password} = <span class="cstat-no" title="statement not covered" >req.body;</span>
 &nbsp;
 &nbsp;
     // Validation
 &nbsp;
-    User.findOne({ email: email})
-        .then(user =&gt; {
-            <span class="missing-if-branch" title="if path not taken" >I</span>if(user){
+<span class="cstat-no" title="statement not covered" >    User.</span>findOne({ email: email})
+        .then(<span class="fstat-no" title="function not covered" >user </span>=&gt; {
+<span class="cstat-no" title="statement not covered" >            if(user){</span>
                 // User exists
 <span class="cstat-no" title="statement not covered" >                res.</span>status(409).json({status:409, message:'User exist'}) 
 &nbsp;
             }else{
-                const newUser = new User({
+                const newUser = <span class="cstat-no" title="statement not covered" >new U</span>ser({
                     name,
                     email,
                     password
                 })
                 //  Hash Password
 &nbsp;
-                bcrypt.genSalt(10, (err, salt) =&gt;
-                bcrypt.hash(newUser.password, salt, (err, hash) =&gt; {
-                    <span class="missing-if-branch" title="if path not taken" >I</span>if(err) <span class="cstat-no" title="statement not covered" >throw e</span>rr;
+<span class="cstat-no" title="statement not covered" >                bcrypt.g</span>enSalt(10, <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span></span>rr, salt) =&gt;
+                bcrypt.hash(newUser.password, salt, <span class="fstat-no" title="function not covered" >(e</span>rr, hash) =&gt; {
+<span class="cstat-no" title="statement not covered" >                    if(err) <span class="cstat-no" title="statement not covered" >throw e</span></span>rr;
                     // set password to hashed
 &nbsp;
-                    newUser.password = hash;
+<span class="cstat-no" title="statement not covered" >                    newUser.</span>password = hash;
                     // save user 
-                    newUser.save() 
-                    .then(() =&gt; {
-                        const token = jwt.sign( {name: newUser.name, id: newUser._id, mail: newUser.email},process.env.JWT_SECRET
+<span class="cstat-no" title="statement not covered" >                    newUser.</span>save() 
+                    .then(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+                        const token = <span class="cstat-no" title="statement not covered" >jwt.s</span>ign( {name: newUser.name, id: newUser._id, mail: newUser.email},process.env.JWT_SECRET
                         );
-                        res.status(201).json({status: 201, message: 'you are register you can log in!', token});
+<span class="cstat-no" title="statement not covered" >                        res.</span>status(201).json({status: 201, message: 'you are register you can log in!', token});
                         
                     })               
                 })
@@ -217,7 +217,7 @@ export default userController</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Sep 28 2020 09:50:07 GMT+0200 (Central Africa Time)
+                at Fri Oct 02 2020 01:09:45 GMT+0200 (Central Africa Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

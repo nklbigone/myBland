@@ -1,0 +1,537 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0.",
+    "title": "my Brand Alexis",
+    "description": "This is my description of documenting my swagger for the API",
+    "license": {
+      "name": "Alexis",
+      "url": "https://opensource.org/license/NIT"
+    }
+  },
+  "host": "localhost:3001",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "blogs",
+      "description": "Documentation of blog API"
+    }
+  ],
+  "schemes": ["http","https"],
+  "consumes": ["multipart/form-data"],
+  "produces": ["application/json"],
+  "paths": {
+    "/blogs": {
+      "get": {
+        "tags": ["blogs"],
+        "summary": "get all blogs in the system",
+        "parameters": [
+          {
+            "name": "authorazation",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok",
+            "schema": {
+              "$ref": "#/definitions/blogs"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["blogs"],
+        "summary": "creating new blog",
+        "responses": {
+          "200": {
+            "description": "ok",
+            "schema": {
+              "$ref": "#/definitions/blog"
+            }
+          },
+          "404": {
+            "description": "Failed to post blog"
+          }
+        },
+        "parameters": [
+          {
+            "name": "authorazation",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "blogDescription",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "blogPicture",
+            "in": "formData",
+            "required": true,
+            "type": "file",
+            "description": "this is the blog we want to create in this blog db"
+          }
+        ]
+      }
+    },
+    "/blogs/{id}": {
+      "get": {
+        "tags": ["blogs"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Get the Id of blog you want to get",
+            "type": "string"
+          },
+          {
+            "name": "authorazation",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "summary": "get blog with given Id",
+        "responses": {
+          "200": {
+            "description": "ok",
+            "schema": {
+              "$ref": "#/definitions/blog"
+            }
+          },
+          "404": {
+            "description": "Failed to get blog with that Id"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["blogs"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Patch with Id of blog",
+            "type": "string"
+          },
+          {
+            "name": "authorazation",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "blogDescription",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "blogPicture",
+            "in": "formData",
+            "required": true,
+            "type": "file",
+            "description": "this is the blog we want to create in this blog db"
+          }
+        ],
+        "summary": "get blog with given Id",
+        "responses": {
+          "200": {
+            "description": "ok",
+            "schema": {
+              "$ref": "#/definitions/blogs"
+            }
+          },
+          "404": {
+            "description": "Failed to get blog with that Id"
+          }
+        }
+      },
+
+      "delete": {
+        "tags": ["blogs"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Delete blog",
+            "type": "string"
+          },
+          {
+            "name": "authorazation",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "summary": "Delete blog with it's Id",
+        "responses": {
+          "200": {
+            "description": "ok",
+            "schema": {
+              "$ref": "#/definitions/id"
+            }
+          },
+          "404": {
+            "description": "Failed to get blog with that Id"
+          }
+        }
+      },
+      "put": {
+        "tags": ["blogs"],
+        "parameters": [
+          {
+            "name": "authorazation",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "updating blog",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "blogDescription",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "blogPicture",
+            "in": "formData",
+            "required": true,
+            "type": "file",
+            "description": "this is the blog we want to create in this blog db"
+          }
+        ],
+        "summary": "Update blog",
+        "responses": {
+          "200": {
+            "description": "ok",
+            "schema": {
+              "$ref": "#/definitions/blog"
+            }
+          },
+          "404": {
+            "description": "Failed to get blog with that Id"
+          }
+        }
+      }
+    }, 
+    "/users/register":{
+        "post": {
+            "tags": ["users"],
+            "summary": "register",
+            "responses": {
+              "200": {
+                "description": "ok",
+                "schema": {
+                  "$ref": "#/definitions/users"
+                }
+              },
+              "404": {
+                "description": "Failed to post blog"
+              }
+            },
+            "parameters": [
+              {
+                "name": "name",
+                "in": "formData",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "email",
+                "in": "formData",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "password",
+                "in": "formData",
+                "required": true,
+                "type": "string",
+                "description": "registration of users"
+              }
+            ]
+          }
+          
+    },
+    "/users/login":{
+        "post": {
+            "tags": ["users"],
+            "summary": "login",
+            "consumes":["application/json"],
+            "responses": {
+              "200": {
+                "description": "ok",
+                "schema": {
+                  "$ref": "#/definitions/users"
+                }
+              },
+              "404": {
+                "description": "Failed to login"
+              }
+            },
+            "parameters": [
+              {
+                "name": "body",
+                "in": "body",
+                "required": true,
+                "schema": {
+                  "$ref": "#/definitions/login"
+                }
+              }
+            ]
+          }
+              
+    },
+    "/users/logout":{
+        "get": {
+            "tags": ["users"],
+            "summary": "logout",
+            "responses": {
+              "200": {
+                "description": "ok",
+                "schema": {
+                  "$ref": "#/definitions/users"
+                }
+              }
+            }
+          }
+    },
+    "/queries":{
+        "post": {
+            "tags": ["queries"],
+            "summary": "create query",
+            "responses": {
+              "200": {
+                "description": "ok",
+                "schema": {
+                  "$ref": "#/definitions/queries"
+                }
+              },
+              "404": {
+                "description": "Failed to post query"
+              }
+            },
+            "parameters": [
+              {
+                "name": "name",
+                "in": "formData",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "email",
+                "in": "formData",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "content",
+                "in": "formData",
+                "required": true,
+                "type": "string",
+                "description": "post query"
+              }
+            ]
+          },
+          "get": {
+            "tags": ["queries"],
+            "parameters": [
+              {
+                "name": "authorazation",
+                "in": "header",
+                "required": true,
+                "type": "string"
+              }
+            ],
+            "summary": " get all queries",
+            "responses": {
+              "200": {
+                "description": "ok",
+                "schema": {
+                  "$ref": "#/definitions/queres"
+                }
+              },
+              "404": {
+                "description": "no query found"
+              }
+            }
+          }
+    },
+    "/contacts":{
+      "post": {
+        "tags": ["contacts"],
+        "summary": "creating new contact",
+        "responses": {
+          "200": {
+            "description": "ok",
+            "schema": {
+              "$ref": "#/definitions/contacts"
+            }
+          },
+          "404": {
+            "description": "Failed to post contact"
+          }
+        },
+        "parameters": [
+          {
+            "name": "authorazation",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "message",
+            "in": "formData",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      },
+      "get": {
+        "tags": ["contact"],
+        "summary": "get all contact",
+        "parameters": [
+          {
+            "name": "authorazation",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok",
+            "schema": {
+              "$ref": "#/definitions/contacts"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "id": {
+      "properties": {
+        "uuid": {
+          "type": "string"
+        }
+      }
+    },
+    "blog": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "blogDescription": {
+          "type": "string"
+        },
+        "blogPicture": {
+          "type": "string"
+        }
+      }
+    },
+    "blogs": {
+      "type": "object",
+      "properties": {
+        "blogs": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#definitions/blog"
+          }
+        }
+      }
+    },
+    "users": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+   },
+   "login": {
+    "type": "object",
+    "properties": {
+      "email": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      }
+    }
+},
+   "queres": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string"
+      },
+      "cointent": {
+        "type": "string"
+      }
+    }
+},
+"contacts": {
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}
+ }
+}
