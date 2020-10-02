@@ -7,7 +7,9 @@
     "testEnvironment": "node"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node server.js",
+    "build": "babel ./scr --out-dir build",
+    "start": "npm run build && node build/server.js",
+    "dev": "nodemon --exec babel-node scr/server.js",
     "test": "mocha */test/**.test.js --require @babel/register --exit --timeout 15000 NODE_ENV=test mocha",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "coverage": "nyc --reporter=html --reporter=text npm test"
@@ -36,7 +38,8 @@
     "nyc": "^15.1.0",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "swagger-ui-express": "^4.1.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
