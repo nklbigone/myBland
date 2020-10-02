@@ -5,7 +5,7 @@
     "node": "12.18.4"
   },
   "description": "",
-  "main": "server.js",
+  "main": "./scr/server.js",
   "jest": {
     "testEnvironment": "node"
   },
@@ -21,7 +21,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
     "@babel/polyfill": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
     "@babel/register": "^7.11.5",
     "@hapi/joi": "^17.1.1",
     "babel-cli": "^6.26.0",
@@ -46,10 +50,6 @@
     "swagger-ui-express": "^4.1.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/node": "^7.10.5",
-    "@babel/preset-env": "^7.11.5",
     "@types/chai-http": "^4.2.0",
     "chai": "^4.2.0",
     "check-code-coverage": "^1.10.0",
